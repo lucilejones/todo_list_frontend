@@ -6,7 +6,8 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-todo-list',
-  // imports: [FormsModule, CommonModule],
+  standalone: true,
+  imports: [FormsModule, CommonModule],
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css']
 })
