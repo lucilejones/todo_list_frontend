@@ -11,12 +11,16 @@ export class TodoService {
 
   constructor(private http: HttpClient) { }
 
-  getTodos(): Observable<Todo[]> {
+  	getTodos(): Observable<Todo[]> {
 		return this.http.get<Todo[]>(this.url);
 	}
 
 	getTodoById(id: number): Observable<Todo> {
 		return this.http.get<Todo>(`${this.url}/${id}`);
+	}
+
+	getMyTodos(): Observable<Todo[]> {
+		return this.http.get<Todo[]>('http://localhost:3000/my_todos');
 	}
 
 	createTodo(todo: { body: string; is_completed: boolean }): Observable<Todo> {
